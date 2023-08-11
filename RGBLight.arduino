@@ -1,0 +1,41 @@
+//Which port it is connecting to
+int redPin= 2;
+int greenPin = 4;
+int bluePin = 5;
+
+void setup() {
+  //Pin is on output mode
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  
+
+  
+}
+// Endless loop (Repeats forever)
+void loop() { 
+  
+  setColor(200, 0, 0); // RGB (Red)
+  delay(250);
+  setColor(200, 60, 0); // Orange?
+  delay(250);
+  setColor(170, 200, 0); //Yellow?
+  delay(250);
+  setColor(0, 200, 0); // Same but green
+  delay(250);
+  setColor(0, 0, 200); // Same but blue
+  delay(250);
+  setColor(140, 0, 200); // Red and blue = purple
+  delay(250);
+  setColor(200, 200, 200); // R + G + B = White
+  delay(250);                  
+  setColor(0, 0, 0); //Off
+  delay(250);
+}
+
+void setColor(int redValue, int greenValue, int blueValue) {
+  //Takes RGB, and sets each colour to right amount. Analog write apparently sets colour.
+  analogWrite(redPin, redValue);
+  analogWrite(greenPin, greenValue);
+  analogWrite(bluePin, blueValue);
+}
