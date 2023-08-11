@@ -1,5 +1,6 @@
 // Massive credit to ESP32.IO: https://esp32io.com/tutorials/esp32-rgb-led
-
+// Photos: file:///C:/Users/benwe/Downloads/myimage%20(1).png and file:///C:/Users/benwe/Downloads/myimage.png
+// You have seen it work.
 //Which port it is connecting to
 int redPin= 2;
 int greenPin = 4;
