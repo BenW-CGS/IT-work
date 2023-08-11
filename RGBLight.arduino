@@ -11,13 +11,11 @@ void setup() {
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
-  
-
-  
+  Serial.begin(9600);
 }
 // Endless loop (Repeats forever)
 void loop() { 
-  
+  //Time to make an attempt at a rainbow (Orange and yellow are hard.)
   setColor(200, 0, 0); // RGB (Red)
   delay(250);
   setColor(200, 60, 0); // Orange?
@@ -32,8 +30,9 @@ void loop() {
   delay(250);
   setColor(200, 200, 200); // R + G + B = White
   delay(250);                  
-  setColor(0, 0, 0); //Off
+  setColor(0, 0, 0); //Off 
   delay(250);
+  Serial.println("I'm a serial message!");
 }
 
 void setColor(int redValue, int greenValue, int blueValue) {
