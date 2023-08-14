@@ -2,21 +2,21 @@
 // Photos: file:///C:/Users/benwe/Downloads/myimage%20(1).png and file:///C:/Users/benwe/Downloads/myimage.png
 // You have seen it work.
 //Which port it is connecting to
-int redPin= 2;
-int greenPin = 4;
-int bluePin = 5;
+int redPin= 2; //red pin on port D2
+int greenPin = 4; //D4
+int bluePin = 5; //D5
 
 void setup() {
-  //Pin is on output mode
+  //All pins on output mode to emit light
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(9600); // Setup serial monitor
 }
 // Endless loop (Repeats forever)
 void loop() { 
   //Time to make an attempt at a rainbow (Orange and yellow are hard.)
-  setColor(200, 0, 0); // RGB (Red)
+  setColor(200, 0, 0); // RGB code (Red)
   delay(250);
   setColor(200, 60, 0); // Orange?
   delay(250);
@@ -32,12 +32,12 @@ void loop() {
   delay(250);                  
   setColor(0, 0, 0); //Off 
   delay(250);
-  Serial.println("I'm a serial message!");
+  Serial.println("I'm a serial message!"); //Basically Console.Log()
 }
 
 void setColor(int redValue, int greenValue, int blueValue) {
   //Takes RGB, and sets each colour to right amount. Analog write apparently sets colour.
-  analogWrite(redPin, redValue);
-  analogWrite(greenPin, greenValue);
-  analogWrite(bluePin, blueValue);
+  analogWrite(redPin, redValue); //Set red pin to certain amount of light.
+  analogWrite(greenPin, greenValue); //Same but green
+  analogWrite(bluePin, blueValue); //Same but blue
 }
